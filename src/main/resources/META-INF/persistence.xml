@@ -3,7 +3,7 @@
   <persistence-unit name="terramobile-server-persistence-unit" transaction-type="JTA">
     <description>Forge Persistence Unit</description>
     <provider>org.hibernate.ejb.HibernatePersistence</provider>
-    <jta-data-source>terramobile</jta-data-source>
+    <jta-data-source>java:jboss/datasources/TerraDS</jta-data-source>
     <exclude-unlisted-classes>false</exclude-unlisted-classes>
     <properties>
       <property name="hibernate.hbm2ddl.auto" value="create-drop"/>
