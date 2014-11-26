@@ -1,6 +1,13 @@
 Terra Server
 ====================
 
+# Comandos do Forge
+
+	rest-generate-endpoints-from-entities --targets br.terracore.server.*
+	scaffold-setup --provider AngularJS
+	scaffold-generate --provider AngularJS --targets br.terracore.server.*
+
+fonte: http://forge.jboss.org/addon/org.jboss.forge.addon:angularjs
 
 Executando
 ===================
