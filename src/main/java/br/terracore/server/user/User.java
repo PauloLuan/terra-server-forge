@@ -15,7 +15,7 @@ public class User implements Serializable {
         
         @Id
         @GeneratedValue
-        private Integer id;
+        private Long id;
         
         private String  name;
         
@@ -34,7 +34,7 @@ public class User implements Serializable {
         }
         
         public User(
-                    Integer id,
+                    Long id,
                     String name,
                     String login,
                     String password,
@@ -47,11 +47,11 @@ public class User implements Serializable {
                 this.hash = userHash;
         }
         
-        public Integer getId() {
+        public Long getId() {
                 return id;
         }
         
-        public void setId(Integer id) {
+        public void setId(Long id) {
                 this.id = id;
         }
         

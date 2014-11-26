@@ -7,6 +7,13 @@
         <strong>Error!</strong> Something broke. Retry, or cancel and start afresh.
     </div>
     
+    <div class="form-group" ng-class="{'has-error': FormForm.schema.$invalid}">
+        <label for="schema" class="col-sm-2 control-label">Schema</label>
+        <div id="schemaControls" class="col-sm-10">
+            <input id="schema" name="schema" type="text" class="form-control" ng-model="form.schema" placeholder="Enter the Form Schema"></input>
+        </div>
+    </div>
+
     <div class="form-group" ng-class="{'has-error': FormForm.date.$invalid}">
         <label for="date" class="col-sm-2 control-label">Date</label>
         <div id="dateControls" class="col-sm-10">
@@ -15,103 +22,10 @@
         </div>
     </div>
 
-    <div class="form-group" ng-class="{'has-error': FormForm.coordx.$invalid}">
-        <label for="coordx" class="col-sm-2 control-label">Coordx</label>
-        <div id="coordxControls" class="col-sm-10">
-            <input id="coordx" name="coordx" type="number" class="form-control" ng-model="form.coordx" placeholder="Enter the Form Coordx"></input>
-            <span class="help-block error" ng-show="FormForm.coordx.$error.number">not a number</span>
-        </div>
-    </div>
-
-    <div class="form-group" ng-class="{'has-error': FormForm.coordy.$invalid}">
-        <label for="coordy" class="col-sm-2 control-label">Coordy</label>
-        <div id="coordyControls" class="col-sm-10">
-            <input id="coordy" name="coordy" type="number" class="form-control" ng-model="form.coordy" placeholder="Enter the Form Coordy"></input>
-            <span class="help-block error" ng-show="FormForm.coordy.$error.number">not a number</span>
-        </div>
-    </div>
-
-    <div class="form-group" ng-class="{'has-error': FormForm.info1.$invalid}">
-        <label for="info1" class="col-sm-2 control-label">Info 1</label>
-        <div id="info1Controls" class="col-sm-10">
-            <input id="info1" name="info1" type="text" class="form-control" ng-model="form.info1" placeholder="Enter the Form Info 1"></input>
-        </div>
-    </div>
-
-    <div class="form-group" ng-class="{'has-error': FormForm.info2.$invalid}">
-        <label for="info2" class="col-sm-2 control-label">Info 2</label>
-        <div id="info2Controls" class="col-sm-10">
-            <input id="info2" name="info2" type="text" class="form-control" ng-model="form.info2" placeholder="Enter the Form Info 2"></input>
-        </div>
-    </div>
-
-    <div class="form-group" ng-class="{'has-error': FormForm.numberConfirmation.$invalid}">
-        <label for="numberConfirmation" class="col-sm-2 control-label">Number Confirmation</label>
-        <div id="numberConfirmationControls" class="col-sm-10">
-            <input id="numberConfirmation" name="numberConfirmation" type="text" class="form-control" ng-model="form.numberConfirmation" placeholder="Enter the Form Number Confirmation"></input>
-        </div>
-    </div>
-
-    <div class="form-group" ng-class="{'has-error': FormForm.variance.$invalid}">
-        <label for="variance" class="col-sm-2 control-label">Variance</label>
-        <div id="varianceControls" class="col-sm-10">
-            <input id="variance" name="variance" type="text" class="form-control" ng-model="form.variance" placeholder="Enter the Form Variance"></input>
-        </div>
-    </div>
-
-    <div class="form-group" ng-class="{'has-error': FormForm.otherNumbers.$invalid}">
-        <label for="otherNumbers" class="col-sm-2 control-label">Other Numbers</label>
-        <div id="otherNumbersControls" class="col-sm-10">
-            <input id="otherNumbers" name="otherNumbers" type="text" class="form-control" ng-model="form.otherNumbers" placeholder="Enter the Form Other Numbers"></input>
-        </div>
-    </div>
-
-    <div class="form-group" ng-class="{'has-error': FormForm.primaryUse.$invalid}">
-        <label for="primaryUse" class="col-sm-2 control-label">Primary Use</label>
-        <div id="primaryUseControls" class="col-sm-10">
-            <input id="primaryUse" name="primaryUse" type="text" class="form-control" ng-model="form.primaryUse" placeholder="Enter the Form Primary Use"></input>
-        </div>
-    </div>
-
-    <div class="form-group" ng-class="{'has-error': FormForm.secondaryUse.$invalid}">
-        <label for="secondaryUse" class="col-sm-2 control-label">Secondary Use</label>
-        <div id="secondaryUseControls" class="col-sm-10">
-            <input id="secondaryUse" name="secondaryUse" type="text" class="form-control" ng-model="form.secondaryUse" placeholder="Enter the Form Secondary Use"></input>
-        </div>
-    </div>
-
-    <div class="form-group" ng-class="{'has-error': FormForm.pavimentation.$invalid}">
-        <label for="pavimentation" class="col-sm-2 control-label">Pavimentation</label>
-        <div id="pavimentationControls" class="col-sm-10">
-            <input id="pavimentation" name="pavimentation" type="text" class="form-control" ng-model="form.pavimentation" placeholder="Enter the Form Pavimentation"></input>
-        </div>
-    </div>
-
-    <div class="form-group" ng-class="{'has-error': FormForm.asphaltGuide.$invalid}">
-        <label for="asphaltGuide" class="col-sm-2 control-label">Asphalt Guide</label>
-        <div id="asphaltGuideControls" class="col-sm-10">
-            <input id="asphaltGuide" name="asphaltGuide" type="text" class="form-control" ng-model="form.asphaltGuide" placeholder="Enter the Form Asphalt Guide"></input>
-        </div>
-    </div>
-
-    <div class="form-group" ng-class="{'has-error': FormForm.publicIlumination.$invalid}">
-        <label for="publicIlumination" class="col-sm-2 control-label">Public Ilumination</label>
-        <div id="publicIluminationControls" class="col-sm-10">
-            <input id="publicIlumination" name="publicIlumination" type="text" class="form-control" ng-model="form.publicIlumination" placeholder="Enter the Form Public Ilumination"></input>
-        </div>
-    </div>
-
-    <div class="form-group" ng-class="{'has-error': FormForm.energy.$invalid}">
-        <label for="energy" class="col-sm-2 control-label">Energy</label>
-        <div id="energyControls" class="col-sm-10">
-            <input id="energy" name="energy" type="text" class="form-control" ng-model="form.energy" placeholder="Enter the Form Energy"></input>
-        </div>
-    </div>
-
-    <div class="form-group" ng-class="{'has-error': FormForm.pluvialGallery.$invalid}">
-        <label for="pluvialGallery" class="col-sm-2 control-label">Pluvial Gallery</label>
-        <div id="pluvialGalleryControls" class="col-sm-10">
-            <input id="pluvialGallery" name="pluvialGallery" type="text" class="form-control" ng-model="form.pluvialGallery" placeholder="Enter the Form Pluvial Gallery"></input>
+    <div class="form-group" ng-class="{'has-error': FormForm.resultFill.$invalid}">
+        <label for="resultFill" class="col-sm-2 control-label">Result Fill</label>
+        <div id="resultFillControls" class="col-sm-10">
+            <input id="resultFill" name="resultFill" type="text" class="form-control" ng-model="form.resultFill" placeholder="Enter the Form Result Fill"></input>
         </div>
     </div>
 

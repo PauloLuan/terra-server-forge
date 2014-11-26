@@ -11,12 +11,11 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.xml.bind.annotation.XmlRootElement;
 
 import br.terracore.server.address.Address;
 import br.terracore.server.form.Form;
 import br.terracore.server.user.User;
-
-import javax.xml.bind.annotation.XmlRootElement;
 
 @Entity
 @Table(name = "task")
@@ -27,7 +26,7 @@ public class Task implements Serializable {
         
         @Id
         @GeneratedValue
-        private Integer           id;
+        private Long           id;
         
         @OneToOne(cascade = CascadeType.ALL, targetEntity = Address.class)
         private Address           address;
@@ -46,7 +45,7 @@ public class Task implements Serializable {
         }
         
         public Task(
-                    Integer id,
+                    Long id,
                     Address address,
                     User user,
                     Form form,
@@ -59,11 +58,11 @@ public class Task implements Serializable {
                 this.done = done;
         }
         
-        public Integer getId() {
+        public Long getId() {
                 return id;
         }
         
-        public void setId(Integer id) {
+        public void setId(Long id) {
                 this.id = id;
         }
         

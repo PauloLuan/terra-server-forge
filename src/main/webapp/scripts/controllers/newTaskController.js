@@ -38,7 +38,7 @@ angular.module('terramobileserver').controller('NewTaskController', function ($s
         $scope.formSelectionList = $.map(items, function(item) {
             return ( {
                 value : item.id,
-                text : item.date
+                text : item.schema
             });
         });
     });

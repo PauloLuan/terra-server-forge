@@ -9,10 +9,9 @@ import javax.persistence.Id;
 import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.xml.bind.annotation.XmlRootElement;
 
 import br.terracore.server.form.Form;
-
-import javax.xml.bind.annotation.XmlRootElement;
 
 @Entity
 @Table(name = "\"photo\"")
@@ -20,7 +19,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 public class Photo implements Serializable {
         @Id
         @GeneratedValue
-        private Integer id;
+        private Long id;
         @Lob
         private byte[]  blob;
         
@@ -33,7 +32,7 @@ public class Photo implements Serializable {
                 // TODO Auto-generated constructor stub
         }
         
-        public Photo(Integer id, byte[] blob, String path, Form form) {
+        public Photo(Long id, byte[] blob, String path, Form form) {
                 super();
                 this.id = id;
                 this.path = path;
@@ -41,11 +40,11 @@ public class Photo implements Serializable {
                 this.blob = blob;
         }
         
-        public Integer getId() {
+        public Long getId() {
                 return id;
         }
         
-        public void setId(Integer id) {
+        public void setId(Long id) {
                 this.id = id;
         }
         
