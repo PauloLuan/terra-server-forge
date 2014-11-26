@@ -3,9 +3,11 @@ package br.terracore.server.form;
 import java.io.Serializable;
 import java.util.Date;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlRootElement;
 
@@ -16,12 +18,13 @@ public class Form implements Serializable {
         
         @Id
         @GeneratedValue
-        private Long    id;
+        private Long       id;
         
+        @ManyToOne(cascade = CascadeType.ALL, targetEntity = FormSchema.class)
         private FormSchema schema;
         
         private Date       date;
-
+        
         private String     resultFill;
         
         public Form() {}
@@ -66,21 +69,15 @@ public class Form implements Serializable {
                 this.resultFill = resultFill;
         }
         
-        /*@Override
-        public String toString() {
-                JSONObject data = new JSONObject();
-                
-                try {
-                        data.put("id", id);
-                        data.put("schema", schema);
-                        data.put("date", date);
-                        data.put("result", resultFill);
-                }
-                catch (JSONException e) {
-                        e.printStackTrace();
-                }
-                
-                return data.toString();
-        }*/
+        /*
+         * @Override public String toString() { JSONObject data = new
+         * JSONObject();
+         * 
+         * try { data.put("id", id); data.put("schema", schema);
+         * data.put("date", date); data.put("result", resultFill); } catch
+         * (JSONException e) { e.printStackTrace(); }
+         * 
+         * return data.toString(); }
+         */
         
 }

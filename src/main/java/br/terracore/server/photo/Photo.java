@@ -19,14 +19,14 @@ import br.terracore.server.form.Form;
 public class Photo implements Serializable {
         @Id
         @GeneratedValue
-        private Long id;
+        private Long   id;
         @Lob
-        private byte[]  blob;
+        private byte[] blob;
         
-        private String  path;
+        private String path;
         
         @ManyToOne(cascade = CascadeType.ALL, targetEntity = Form.class)
-        private Form    form;
+        private Form   form;
         
         public Photo() {
                 // TODO Auto-generated constructor stub

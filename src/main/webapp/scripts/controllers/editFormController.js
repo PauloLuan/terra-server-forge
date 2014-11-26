@@ -1,6 +1,6 @@
 
 
-angular.module('terramobileserver').controller('EditFormController', function($scope, $routeParams, $location, FormResource ) {
+angular.module('terramobileserver').controller('EditFormController', function($scope, $routeParams, $location, FormResource , FormSchemaResource) {
     var self = this;
     $scope.disabled = false;
     $scope.$location = $location;
@@ -9,6 +9,23 @@ angular.module('terramobileserver').controller('EditFormController', function($s
         var successCallback = function(data){
             self.original = data;
             $scope.form = new FormResource(self.original);
+            FormSchemaResource.queryAll(function(items) {
+                $scope.schemaSelectionList = $.map(items, function(item) {
+                    var wrappedObject = {
+                        id : item.id
+                    };
+                    var labelObject = {
+                        value : item.id,
+                        text : item.name
+                    };
+                    if($scope.form.schema && item.id == $scope.form.schema.id) {
+                        $scope.schemaSelection = labelObject;
+                        $scope.form.schema = wrappedObject;
+                        self.original.schema = $scope.form.schema;
+                    }
+                    return labelObject;
+                });
+            });
         };
         var errorCallback = function() {
             $location.path("/Forms");
@@ -46,6 +63,12 @@ angular.module('terramobileserver').controller('EditFormController', function($s
         $scope.form.$remove(successCallback, errorCallback);
     };
     
+    $scope.$watch("schemaSelection", function(selection) {
+        if (typeof selection != 'undefined') {
+            $scope.form.schema = {};
+            $scope.form.schema.id = selection.value;
+        }
+    });
     
     $scope.get();
 });

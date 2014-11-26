@@ -16,7 +16,7 @@ angular.module('terramobileserver').controller('EditPhotoController', function($
                     };
                     var labelObject = {
                         value : item.id,
-                        text : item.schema
+                        text : item.date
                     };
                     if($scope.photo.form && item.id == $scope.photo.form.id) {
                         $scope.formSelection = labelObject;

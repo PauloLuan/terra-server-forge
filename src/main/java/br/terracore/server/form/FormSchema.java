@@ -15,20 +15,20 @@ public class FormSchema implements Serializable {
         
         @Id
         @GeneratedValue
-        private Long id;
+        private Long   id;
         
-        private String  name;
+        private String name;
         
-        private String  description;
+        private String description;
         
-        private String  type;
+        private String type;
         
         /**
          * Um base64 de um ícone ?
          * */
-        private String  icon;
+        private String icon;
         
-        private String  schema;
+        private String schema;
         
         public FormSchema() {}
         
@@ -97,22 +97,14 @@ public class FormSchema implements Serializable {
         }
         
         /*
-        @Override
-        public String toString() {
-                JSONObject data = new JSONObject();
-                
-                try {
-                        data.put("id", id);
-                        data.put("name", name);
-                        data.put("description", description);
-                        data.put("type", type);
-                        data.put("icon", icon);
-                        data.put("schema", schema);
-                }
-                catch (JSONException e) {
-                        e.printStackTrace();
-                }
-                
-                return data.toString();
-        }*/
+         * @Override public String toString() { JSONObject data = new
+         * JSONObject();
+         * 
+         * try { data.put("id", id); data.put("name", name);
+         * data.put("description", description); data.put("type", type);
+         * data.put("icon", icon); data.put("schema", schema); } catch
+         * (JSONException e) { e.printStackTrace(); }
+         * 
+         * return data.toString(); }
+         */
 }

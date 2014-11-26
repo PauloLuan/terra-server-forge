@@ -8,7 +8,7 @@ angular.module('terramobileserver').controller('NewPhotoController', function ($
         $scope.formSelectionList = $.map(items, function(item) {
             return ( {
                 value : item.id,
-                text : item.schema
+                text : item.date
             });
         });
     });

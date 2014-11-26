@@ -1,6 +1,6 @@
 
 
-angular.module('terramobileserver').controller('SearchFormController', function($scope, $http, FormResource ) {
+angular.module('terramobileserver').controller('SearchFormController', function($scope, $http, FormResource , FormSchemaResource) {
 
     $scope.search={};
     $scope.currentPage = 0;
@@ -17,6 +17,7 @@ angular.module('terramobileserver').controller('SearchFormController', function(
         }
         return max;
     };
+    $scope.schemaList = FormSchemaResource.queryAll();
 
     $scope.performSearch = function() {
         $scope.searchResults = FormResource.queryAll(function(){

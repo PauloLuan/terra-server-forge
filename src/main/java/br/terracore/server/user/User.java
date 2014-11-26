@@ -15,15 +15,15 @@ public class User implements Serializable {
         
         @Id
         @GeneratedValue
-        private Long id;
+        private Long   id;
         
-        private String  name;
+        private String name;
         
-        private String  login;
+        private String login;
         
-        private String  password;
+        private String password;
         
-        private String  hash;
+        private String hash;
         
         public User() {
                 // TODO Auto-generated constructor stub

@@ -26,7 +26,7 @@ public class Task implements Serializable {
         
         @Id
         @GeneratedValue
-        private Long           id;
+        private Long              id;
         
         @OneToOne(cascade = CascadeType.ALL, targetEntity = Address.class)
         private Address           address;
@@ -44,12 +44,7 @@ public class Task implements Serializable {
                 // TODO Auto-generated constructor stub
         }
         
-        public Task(
-                    Long id,
-                    Address address,
-                    User user,
-                    Form form,
-                    boolean done) {
+        public Task(Long id, Address address, User user, Form form, boolean done) {
                 super();
                 this.id = id;
                 this.address = address;

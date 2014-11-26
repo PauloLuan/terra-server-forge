@@ -50,7 +50,7 @@ angular.module('terramobileserver').controller('EditTaskController', function($s
                     };
                     var labelObject = {
                         value : item.id,
-                        text : item.schema
+                        text : item.date
                     };
                     if($scope.task.form && item.id == $scope.task.form.id) {
                         $scope.formSelection = labelObject;

@@ -14,27 +14,27 @@ import javax.xml.bind.annotation.XmlRootElement;
 public class Address implements Serializable {
         @Id
         @GeneratedValue
-        private Long id;
+        private Long   id;
         
-        private String  name;
+        private String name;
         
-        private String  number;
+        private String number;
         
-        private String  extra;       // complemento
-                                      
-        private Double  coordx;
+        private String extra;       // complemento
+                                     
+        private Double coordx;
         
-        private Double  coordy;
+        private Double coordy;
         
-        private String  postalCode;
+        private String postalCode;
         
-        private String  city;
+        private String city;
         
-        private String  state;
+        private String state;
         
-        private String  featureId;   // O idenfificador da feiÃ§Ã£o (SSQQQNNNN),
-                                      
-        private String  neighborhood;
+        private String featureId;   // O idenfificador da feiÃ§Ã£o (SSQQQNNNN),
+                                     
+        private String neighborhood;
         
         public Address() {
                 // TODO Auto-generated constructor stub
