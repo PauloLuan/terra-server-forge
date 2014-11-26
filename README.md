@@ -9,6 +9,7 @@ Terra Server
 
 fonte: http://forge.jboss.org/addon/org.jboss.forge.addon:angularjs
 
+
 Executando
 ===================
 
@@ -34,3 +35,23 @@ Executando
 Trocando banco de dados
 ===================
 Para usar outro banco de dados, como o Postgres, siga esse tutorial: https://github.com/jboss-developer/jboss-developer-shared-resources/blob/master/guides/CONFIGURE_POSTGRESQL.md#configure-the-postgresql-database-for-use-with-the-quickstarts
+
+
+# Erros
+
+Se aparecer o erro:
+
+Operation ("add") failed - address: ([("deployment" => "terramobile-server.war")]) - failure description: "JBAS014803: Duplicate resource [(\"deployment\" => \"terramobile-server.war\")]"
+
+Edite o arquivo:
+
+	jboss-eap-6.3/standalone/configuration/standalone.xml
+
+Remova todas as linhas referentes ao nó (estará nas últimas linhas): 
+	
+	<deployments> <deployment> </deployment> </deployments>
+
+
+
+
+
