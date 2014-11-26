@@ -6,6 +6,7 @@ import javax.persistence.Basic;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
@@ -28,14 +29,21 @@ public class Task implements Serializable {
         @GeneratedValue
         private Long              id;
         
-        @OneToOne(cascade = CascadeType.ALL, targetEntity = Address.class)
+        @OneToOne(
+                  cascade = { CascadeType.PERSIST, CascadeType.MERGE },
+                  fetch = FetchType.EAGER)
         private Address           address;
         
-        @ManyToOne(cascade = CascadeType.REFRESH, targetEntity = User.class)
+        @ManyToOne(
+                   cascade = { CascadeType.PERSIST, CascadeType.MERGE },
+                   fetch = FetchType.EAGER)
         private User              user;
         
-        @OneToOne(cascade = CascadeType.ALL, targetEntity = Form.class)
+        @OneToOne(
+                  cascade = { CascadeType.PERSIST, CascadeType.MERGE },
+                  fetch = FetchType.EAGER)
         private Form              form;
+        
         @Basic
         @Column(name = "done", columnDefinition = "BIT", length = 1)
         private boolean           done;                 // sincronizado com o servidor?

@@ -2,6 +2,7 @@ package br.terracore.server.form;
 
 import java.io.Serializable;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -19,6 +20,7 @@ public class FormSchema implements Serializable {
         
         private String name;
         
+        @Column(columnDefinition="text")
         private String description;
         
         private String type;
@@ -28,6 +30,7 @@ public class FormSchema implements Serializable {
          * */
         private String icon;
         
+        @Column(columnDefinition="text")
         private String schema;
         
         public FormSchema() {}

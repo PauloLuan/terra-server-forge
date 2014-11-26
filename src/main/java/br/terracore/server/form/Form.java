@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -25,6 +26,7 @@ public class Form implements Serializable {
         
         private Date       date;
         
+        @Column(columnDefinition="text")
         private String     resultFill;
         
         public Form() {}
